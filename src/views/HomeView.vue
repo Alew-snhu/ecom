@@ -1,18 +1,22 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div>
+    <SalesCarousel />
+    <GearCatGridView />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import Vue from "vue";
 
-@Component({
+import GearCatGridView from "@/components/GearCatGridView.vue";
+import SalesCarousel from "@/components/SalesCarousel.vue";
+export default Vue.extend({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: "Home",
+
   components: {
-    HelloWorld,
+    GearCatGridView,
+    SalesCarousel,
   },
-})
-export default class HomeView extends Vue {}
+});
 </script>
