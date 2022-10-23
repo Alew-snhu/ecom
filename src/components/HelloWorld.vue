@@ -1,5 +1,4 @@
 <template>
-  <v-container>
     <v-row class="text-center">
       <v-col cols="12">
         <v-img
@@ -68,14 +67,8 @@
             {{ eco.text }}
           </a>
         </v-row>
-        <v-row justify="center">
-          <v-btn color="purple" href="www.google.com" target="_blank">
-            This is a fancy button
-          </v-btn>
-        </v-row>
       </v-col>
     </v-row>
-  </v-container>
 </template>
 
 <script lang="ts">

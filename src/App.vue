@@ -1,7 +1,7 @@
 <template>
-  <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
+  <v-app class="backgroundColor">
+    <v-app-bar app color="black" dark>
+      <div class="d-flex align-center" >
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
@@ -22,17 +22,28 @@
       </div>
 
       <v-spacer></v-spacer>
+        <v-col cols="3">
+          <v-text-field
+            class="mt-6 mr-3"
+            dense
+            outlined
+            placeholder="Search"
+            color="white"
+            prepend-icon="mdi-magnify" >
+          </v-text-field>
+        </v-col>
+        <v-btn class="mr-2">
+          <v-icon>mdi-home-account</v-icon>
+        </v-btn>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+        <v-btn
+          href="https://github.com/vuetifyjs/vuetify/releases/latest"
+          target="_blank"
+        >
+          <v-icon>mdi-cart-variant</v-icon>
+        </v-btn>
+
     </v-app-bar>
-
     <v-main>
       <router-view />
     </v-main>
@@ -50,3 +61,8 @@ export default Vue.extend({
   }),
 });
 </script>
+<style scoped>
+.backgroundColor {
+  background-color: steelblue;
+}
+</style>
