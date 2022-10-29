@@ -1,21 +1,18 @@
 <template>
-  <v-row class="mt-5" justify="center">
+  <v-row class="mt-5 mb-5" justify="center">
     <v-carousel
       cycle
-      height="400"
+      height="100%"
       style="width:50%;"
       hide-delimiter-background
       show-arrows-on-hover
     >
       <v-carousel-item
-        v-for="(src, i) in vm.imgSources"
+        v-for="(img, i) in imgSources"
         :key="i"
+        :src="img.src"
       >
-        <v-img
-          :src="src"
-          height="100%"
-        >
-        </v-img>
+        <v-sheet></v-sheet>
       </v-carousel-item>
     </v-carousel>
   </v-row>
@@ -23,12 +20,15 @@
 
 <script lang="ts">
 import Vue from "vue";
-import CarouselViewModel from "../../typescript/CarouselViewModel";
 import Component from "vue-class-component";
-@Component
+@Component({
+  props:{
+    imgSources: Array,
+  }
+})
 export default class SalesCarousel extends Vue {
   public name = "SalesCarousel";
-  public vm = new CarouselViewModel()
+
 }
 </script>
 

@@ -1,13 +1,14 @@
 <template>
-  <div class="d-flex mt-5">
-    <v-row justify="center">
+    <v-row justify="center" class="ml-10 mt-5">
       <v-col
-        cols="2"
-        v-for="(gc, i) in vm.gearCategories"
+        xl="1"
+        lg="3"
+        md="4"
+        v-for="(gc, i) in gearCategories"
         :key="i">
         <v-card  height="330px" width="300px" color="green">
           <v-card-title>{{ gc.name }}</v-card-title>
-          <router-link to="/about">
+          <router-link :to="gc.routerPath">
             <v-img
               height="250px"
               :src="gc.imgSrc">
@@ -16,17 +17,19 @@
         </v-card>
       </v-col>
     </v-row>
-  </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import TestViewModel from "../../typescript/TestViewModel";
 import Component from "vue-class-component";
-@Component
+@Component({
+  props:{
+    gearCategories: Array,
+  }
+})
 export default class GearCatGridView extends Vue {
   public name = "GearCatGridView";
-  public vm = new TestViewModel();
+
 }
 </script>
 
